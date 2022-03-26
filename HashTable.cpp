@@ -94,11 +94,13 @@ namespace iLab
 		void InstallHashFunc(unsigned (*func) (string str));
 		unsigned Incert(const string& value);
 		unsigned Search(const string& str);
-		size_t Size()
-		{
-			return __size__;
-		}
+		size_t Size();
 	};
+
+	size_t HashTable::Size()
+	{
+		return __size__;
+	}
 
 	HashTable::HashTable(unsigned (*func) (string str), size_t capacity)
 	{
