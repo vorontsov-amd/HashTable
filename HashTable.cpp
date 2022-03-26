@@ -227,13 +227,19 @@ namespace iLab
 
 
 using namespace iLab;
-int main()
+int main(int argc, char** argv)
 {
 	HashTable words;
 	std::ifstream in;
 	std::ofstream out;
 
-	in.open("text.txt");
+	if (argc == 2)
+		in.open(argv[1]);
+	else if (argc > 2)
+		cout << "More argument";
+	else
+		in.open("text.txt");
+		
 	out.open("words.txt");
 	string str;
 	while (!in.eof())
