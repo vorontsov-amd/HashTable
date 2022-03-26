@@ -158,10 +158,8 @@ namespace iLab
 	{
 		//bool status = CheckValidInsertIndex(index);
 		//if (!status) return -1;
-		
-		if (size == capacity or index >= capacity)
+		if (size == capacity or index >= capacity - 1)
 			ListResize();
-
 		int RealIndex = free;
 		int next_free = -Next[free];
 		
@@ -187,7 +185,6 @@ namespace iLab
 
 		if (!ListIsSorted() and index != Prev[0])
 			list_is_sorted = false;
-
 		return RealIndex;
 	}
 

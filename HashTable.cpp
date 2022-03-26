@@ -160,14 +160,12 @@ namespace iLab
 	unsigned HashTable::Incert(const string& value)
 	{
 		unsigned hash = Search(value);
-
 		if (hash == -1)
 		{
 			word new_element = {
 				value,
 				1,
 			};
-
 			hash = __HashFunc__(value) % __capacity__;
 			__container__[hash].PushBack(new_element);
 			__size__++;
@@ -237,7 +235,6 @@ int main()
 
 	in.open("text.txt");
 	out.open("words.txt");
-
 	string str;
 	while (!in.eof())
 	{
